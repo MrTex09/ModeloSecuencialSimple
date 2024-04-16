@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tensor</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+</head>
+<body style="background-color: cadetblue;">
+    <div style="background-color: coral">
+        <div >
+            <p >Formula: 2X + 6</p>
+            <p  id="description">Haz click aquí para entrenar tu modelo</p>
+            <button id="resultado">Entrenar</button>
+        </div>
+        <div>
+            <input  type="number" placeholder="Introduzca el valor de X" id="numberPredict"></input>
+            <button  id="predict">Predecir</button>
+            <div  id="output_field"></div>
+        </div>
+    </div>
+    <script type="module" src="app.js"></script>
+</body>
+</html>
