@@ -13,18 +13,7 @@ async function learnLinear () {
     const xs = tf.tensor2d([-6, -5, -4, -3, -2, -1, 0, 1, 2], [9, 1])
     const ys = tf.tensor2d([-6, -4, -2, 0, 2, 4, 6, 8, 10], [9, 1])
 
-    const surface = { name: 'Loss', tab: 'Training' }
-    const history = []
-
-    await model.fit(xs, ys, {
-        epochs: 250,
-        callbacks: {
-            onEpochEnd: (epoch, log) => {
-                history.push(log)
-                tfvis.show.history(surface, history, ['loss'])
-            }
-        }
-    })
+    await model.fit(xs, ys, { epochs: 250 })
     trained = true
     document.getElementById("description").innerText = "Modelo Entrenado Correctamente"
 }
@@ -39,5 +28,5 @@ async function predict (num) {
 }
 
 const numberPredict = document.getElementById("numberPredict")
-document.getElementById("result").addEventListener("click", learnLinear)
+document.getElementById("resultado").addEventListener("click", learnLinear)
 document.getElementById("predict").addEventListener("click", () => predict(parseInt(numberPredict.value)))
